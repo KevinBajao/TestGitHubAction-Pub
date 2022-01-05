@@ -44,3 +44,6 @@ jobs:
           id
           pwd
           hostname
+          cd ~
+          pwd
+          ls -lrta
