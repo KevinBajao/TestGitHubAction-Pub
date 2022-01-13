@@ -2,19 +2,23 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+      activity:
+        description: 'What activity do you intend to do?'
+        type: choice
+        options:
+        - Pre-Activity
+        - Post-Activity
+      environment:
+        description: 'What environment you are doing the activity checks?'
+        type: choice
+        options:
+        - Test-US
+        - UAT-US
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Hello ${{ github.event.inputs.name }}!"
-          echo "- in ${{ github.event.inputs.home }}!"
+          echo "You are tryting to do ${{ github.event.inputs.activity }}!"
+          echo "- in ${{ github.event.inputs.environment }}!"
