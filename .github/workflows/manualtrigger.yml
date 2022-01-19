@@ -22,3 +22,5 @@ jobs:
       - run: |
           echo "You are tryting to do ${{ github.event.inputs.activity }}!"
           echo "- in ${{ github.event.inputs.environment }}!"
+          ping LPRSRDSBADM002V
+          
